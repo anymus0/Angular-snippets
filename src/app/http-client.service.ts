@@ -8,6 +8,11 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class HttpClientService {
 
+  get(url: string): Observable<any> {
+    const dataStream = this.http.get(url);
+    return dataStream;
+  }
+
   constructor(private http: HttpClient) {
   }
 }
